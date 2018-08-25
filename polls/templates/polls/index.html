@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index Page</title>
+{#    <style type="text/css">#}
+{#        a{#}
+{#            text-decoration-line: none;#}
+{#            color: brown;#}
+{#        }#}
+{#    </style>#}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+</head>
+<body>
+{% if latest_question_list %}
+    <ul>
+        {% for question in latest_question_list %}
+            <li>
+                {% comment %}<a href="/polls/{{ question.id }}">{{ question.question_text }}</a>{% endcomment %}
+                {% comment %}<a href="{% url 'detail' question.id %}">{{ question.question_text }}</a>{% endcomment %}
+                <a href="{% url 'polls:detail' question.id %}">
+                    {{ question.question_text }}
+                </a>   {% comment %} 指定polls命名空间{% endcomment %}
+            </li>
+        {% endfor %}
+{% endif %}
+    </ul>
+</body>
+</html>

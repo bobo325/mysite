@@ -1,0 +1,50 @@
+1部分：
+# >>> q2 = q1.exclude(pub_date__gte=datetime.date.today())
+# >>> Entry.objects.filter(pub_date__lte='2006-01-01')
+# >>> Entry.objects.get(headline__exact="Cat bites dog")  # Explicit form
+# >>>Entry.objects.get(headline__contains='Lennon')  # like
+# >>>Entry.objects.get(headline__icontains='Lennon')  # like(ignore case)
+# >>>Blog.objects.filter(entry__authors__name='Lennon')
+# >>>Blog.objects.filter(entry__authors__name__isnull=True)
+
+
+2部分：
+# 你项目的 TEMPLATES 配置项描述了 Django 如何载入和渲染模板。
+# 默认的设置文件设置了 DjangoTemplates 后端，并将 APP_DIRS 设置成了 True。
+# 这一选项将会让 DjangoTemplates 在每个 INSTALLED_APPS 文件夹中寻找
+# "templates" 子目录。这就是为什么尽管我们没有像在第二部分中那样修改
+#  DIRS 设置，Django 也能正确找到 polls 的模板位置的原因。
+
+
+3部分：
+#  每个视图函数都接收一个HttpRequest对象作为第一位置参数
+
+4部分：
+# 在 {% for %} 循环中发生的函数调用：question.choice_set.all
+# 被解释为 Python 代码 question.choice_set.all() ，
+# 将会返回一个可迭代的 Choice 对象，这一对象可以在 {% for %} 标签内部使用。
+
+5部分：
+# 由于我们创建一个 POST 表单（它具有修改数据的作用），所以我们需要小心跨站点请求伪造。
+# 谢天谢地，你不必太过担心，因为 Django 已经拥有一个用来防御它的非常容易使用的系统。
+# 简而言之，所有针对内部 URL 的 POST 表单都应该使用 {% csrf_token %} 模板标签。
+
+
+6部分：
+# 通过一个例子, 这是最容易理解的。通常, 人们可能会做类似的事情:
+# Tintin filed a news story!
+reporter = Reporters.objects.get(name='Tintin')
+reporter.stories_filed += 1
+reporter.save()
+# 在这里, 我们将数据库中的值提取到内存中, 并使用熟悉的 Python 运算符对其进行操作, 然后将该对象保存回数据库。
+# 但我们也可以这样做:reporter.stories_filed
+from django.db.models import F
+
+reporter = Reporters.objects.get(name='Tintin')
+reporter.stories_filed = F('stories_filed') + 1
+reporter.save()
+
+
+7部分：
+# 首先，在你的 polls 目录下创建一个名为 static 的目录。Django 将在该目录下查找静态文件，
+# 这种方式和 Diango 在 polls/templates/ 目录下查找 template 的方式类似。
