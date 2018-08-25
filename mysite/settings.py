@@ -38,7 +38,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -48,7 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',  # 回话框架
     'django.contrib.messages',  # 消息框架
     'django.contrib.staticfiles',  # 管理静态文件的框架
-    'polls',   # 新增app
+    'polls',  # 新增app
 ]
 
 MIDDLEWARE_CLASSES = (
@@ -68,7 +67,6 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'mysite.urls'
-
 
 # 见description   2部分
 TEMPLATES = [
@@ -90,7 +88,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
@@ -109,7 +106,7 @@ DATABASES = {
     #     'PORT': '5432'
     # }
     # heroku配置
-'default': {
+    'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'deoq0j7v2rjlb6',
         'USER': 'kohccdgmnqxwmz',
@@ -118,7 +115,6 @@ DATABASES = {
         'PORT': '5432'
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -138,7 +134,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
@@ -152,12 +147,10 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-
 
 # 这个 migrate 命令检查 INSTALLED_APPS 设置，为其中的每个应用创建需要的数据表，
 # 至于具体会创建什么，这取决于你的 mysite/settings.py
