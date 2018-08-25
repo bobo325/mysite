@@ -51,11 +51,11 @@ INSTALLED_APPS = [
     'polls',   # 新增app
 ]
 
-MIDDLEWARE_CLASSES = [
+MIDDLEWARE_CLASSES = (
     # Simplified static file serving.
     # https://warehouse.python.org/project/whitenoise/
     'whitenoise.middleware.WhiteNoiseMiddleware',
-]
+)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -99,12 +99,22 @@ DATABASES = {
     #     'ENGINE': 'django.db.backends.sqlite3',
     #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     # }
-    'default': {
+    # 本地配置
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    #     'NAME': 'mysite',
+    #     'USER': 'postgres',
+    #     'PASSWORD': 'chenbo',
+    #     'HOST': '127.0.0.1',
+    #     'PORT': '5432'
+    # }
+    # heroku配置
+'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'mysite',
-        'USER': 'postgres',
-        'PASSWORD': 'chenbo',
-        'HOST': '127.0.0.1',
+        'NAME': 'deoq0j7v2rjlb6',
+        'USER': 'kohccdgmnqxwmz',
+        'PASSWORD': '93d47a95e35cd7944be7575c0bec5da79b51793ef71956e18273227aa9d292a3',
+        'HOST': 'ec2-54-235-94-36.compute-1.amazonaws.com',
         'PORT': '5432'
     }
 }
