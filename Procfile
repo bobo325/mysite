@@ -1,1 +1,1 @@
-web: gunicorn myproject.wsgi  --log-level=debug
+web: gunicorn mysite.wsgi  --log-level=debug
