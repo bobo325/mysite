@@ -16,9 +16,10 @@ django-haystack==2.6.1
 django-heroku==0.3.1
 django-ipware==2.1.0
 django-pagedown==1.0.5
-django-polls==0.1
+django-polls==0.1.0
 django-uuslug==1.1.8
 Flask==1.0.2
+gunicorn==19.9.0
 idna==2.6
 itsdangerous==0.24
 jieba==0.38
