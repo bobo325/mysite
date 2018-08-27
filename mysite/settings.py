@@ -98,10 +98,10 @@ DATABASES = {
     # heroku配置
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'deoq0j7v2rjlb6',
-        'USER': 'kohccdgmnqxwmz',
-        'PASSWORD': '93d47a95e35cd7944be7575c0bec5da79b51793ef71956e18273227aa9d292a3',
-        'HOST': 'ec2-54-235-94-36.compute-1.amazonaws.com',
+        'NAME': 'da48t79mumau87',
+        'USER': 'mnksmebsgnapfk',
+        'PASSWORD': '77e7e0929ffaaf492d0eb1efe31fcd094551d307241b104f33595801973beb95',
+        'HOST': 'ec2-174-129-236-147.compute-1.amazonaws.com',
         'PORT': '5432'
     }
 }
